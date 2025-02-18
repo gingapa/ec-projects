@@ -65,6 +65,12 @@ section {
 	position: relative;
 	.navbar-nav {
 		> .nav-item {
+			width: 100%;
+			@media screen and (min-width: $md) {
+				width: 33%;
+			}
+		}
+		> .nav-item {
 			.nav-link {
 				padding: 0px !important;
 			}
@@ -546,7 +552,8 @@ textarea {
 	}
 	.eppo-number {
 		font-size: 5rem;
-		min-width: 2em;
+		min-width: 1em;
+		white-space: nowrap;
 		text-align: left;
 		font-family: $font-sans-serif;
 		color: $primary;

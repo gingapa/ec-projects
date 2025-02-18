@@ -52,6 +52,14 @@ section .h1, section .h2, section .h3, section .h4, section .h5 {
   top: 0;
   position: relative;
 }
+.eppo-navbar-light .navbar-nav > .nav-item {
+  width: 100%;
+}
+@media screen and (min-width: 768px) {
+  .eppo-navbar-light .navbar-nav > .nav-item {
+    width: 33%;
+  }
+}
 .eppo-navbar-light .navbar-nav > .nav-item .nav-link {
   padding: 0px !important;
 }
@@ -512,7 +520,8 @@ textarea {
 }
 .eppo-counter .eppo-number {
   font-size: 5rem;
-  min-width: 2em;
+  min-width: 1em;
+  white-space: nowrap;
   text-align: left;
   font-family: "Barlow Condensed", sans-serif;
   color: #0D4EA1;

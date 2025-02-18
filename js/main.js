@@ -97,7 +97,7 @@ $(document).ready(function($) {
 							setTimeout(function() {
 								$('.n-counter').waypoint(function(direction) {
 									if (direction === 'down' && !$(this.element).hasClass('eppo-animated')) {
-										var comma_separator_number_step = $.animateNumber.numberStepFactories.separator(',');
+										var comma_separator_number_step = $.animateNumber.numberStepFactories.separator(' ');
 										$(this.element).find('.eppo-number').each(function() {
 											var $this = $(this),
 											num = $this.data('number');
