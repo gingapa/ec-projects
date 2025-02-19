@@ -65,12 +65,6 @@ section {
 	position: relative;
 	.navbar-nav {
 		> .nav-item {
-			width: 100%;
-			@media screen and (min-width: $md) {
-				width: 33%;
-			}
-		}
-		> .nav-item {
 			.nav-link {
 				padding: 0px !important;
 			}
