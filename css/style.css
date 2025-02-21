@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,700;1,400&family=Open+Sans:ital@0;1&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
 .container {
   max-width: 1140px;
 }
@@ -9,6 +9,22 @@
 
 .bg-secondary {
   background-color: #8F4B9D !important;
+}
+
+.bg-yellow {
+  background-color: #FAB814;
+}
+
+.bg-light-blue {
+  background-color: #E5F7FF;
+}
+
+.color-blue {
+  color: #0D4EA1;
+}
+
+.color-blue-terciary {
+  color: #009AFF;
 }
 
 html {
@@ -41,6 +57,59 @@ section .h1, section .h2, section .h3, section .h4, section .h5 {
   line-height: 1.45;
 }
 
+.section-header {
+  position: relative;
+  color: #fff;
+}
+.section-header::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: 0;
+  width: 100%;
+  height: 120px;
+  background: white;
+  clip-path: polygon(0% 0, 100% 0%, 0% 90%, 0 49%);
+}
+.section-header .section-header-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5em;
+  margin-left: auto;
+  margin-right: auto;
+  background: #0D4EA1;
+  background: linear-gradient(70deg, rgba(255, 255, 255, 0) 5%, rgb(13, 78, 161) 25%, rgb(13, 78, 161) 75%, rgba(255, 255, 255, 0) 95%);
+  margin-top: 13em;
+  margin-bottom: 6em;
+}
+@media screen and (min-width: 960px) {
+  .section-header .section-header-content {
+    width: 50%;
+  }
+}
+
+#section-statistics-member .section-header {
+  background: url("../images/statistics-header.png") no-repeat center center/cover fixed;
+}
+
+#section-types-of-crime .section-header {
+  background: url("../images/criminal-offences-header.png") no-repeat center center/cover fixed;
+}
+#section-types-of-crime .section-header::before {
+  background: #E5F7FF;
+}
+
+#section-in-focus .h3 {
+  color: #fff;
+  left: 24%;
+  top: 30%;
+}
+
+#section-activity-of-the-college .section-header {
+  background: url("../images/college-header.png") no-repeat center center/cover fixed;
+}
+
 .text-primary {
   color: #0D4EA1 !important;
 }
@@ -51,9 +120,16 @@ section .h1, section .h2, section .h3, section .h4, section .h5 {
   z-index: 3;
   top: 0;
   position: relative;
+  background-image: url(../images/main-nav-bg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.eppo-navbar-light .navbar-nav > .nav-item > .nav-link {
+  font-weight: 600;
 }
 .eppo-navbar-light .navbar-nav > .nav-item .nav-link {
   padding: 0px !important;
+  color: #fff;
 }
 .eppo-navbar-light .navbar-nav > .nav-item.eppo-seperator {
   position: relative;
@@ -82,12 +158,9 @@ section .h1, section .h2, section .h3, section .h4, section .h5 {
 }
 .eppo-navbar-light .navbar-toggler {
   border: none;
-  color: rgba(255, 255, 255, 0.5) !important;
-  cursor: pointer;
-  padding-right: 0;
+  color: #fff;
   text-transform: uppercase;
-  font-size: 16px;
-  letter-spacing: 0.1em;
+  font-size: 18px;
 }
 .eppo-navbar-light.scrolled {
   position: fixed;
@@ -114,11 +187,8 @@ section .h1, section .h2, section .h3, section .h4, section .h5 {
 .eppo-navbar-light.scrolled .navbar-toggler {
   border: none;
   border-color: rgba(0, 0, 0, 0.5) !important;
-  cursor: pointer;
   padding-right: 0;
   text-transform: uppercase;
-  font-size: 16px;
-  letter-spacing: 0.1em;
 }
 .eppo-navbar-light.scrolled .nav-link {
   padding-top: 0.7rem !important;
@@ -158,8 +228,14 @@ section .h1, section .h2, section .h3, section .h4, section .h5 {
   background-image: url("../images/bg-2.png");
 }
 
+.eppo-cover {
+  background: url(../images/top-header.png) center bottom/contain no-repeat #2999FF;
+}
 .eppo-cover .eppo-heading {
-  font-size: 5rem;
+  color: #fff;
+  font-size: 4rem;
+  text-transform: uppercase;
+  line-height: 1;
 }
 @media screen and (max-width: 768px) {
   .eppo-cover .eppo-heading {
@@ -231,7 +307,6 @@ section .h1, section .h2, section .h3, section .h4, section .h5 {
   letter-spacing: 0.1em;
   text-transform: uppercase;
   font-weight: bold;
-  cursor: pointer;
 }
 .btn.btn-sm {
   padding: 10px 20px;
@@ -309,8 +384,12 @@ textarea {
   background: #0D4EA1 !important;
 }
 
+.section.bg-light {
+  background: #f3f6fc !important;
+}
+
 .eppo-section {
-  padding: 7em 0;
+  padding: 2em 0;
 }
 .eppo-section.eppo-slant {
   padding: 5em 0 10em 0;
@@ -318,6 +397,7 @@ textarea {
 .eppo-section .eppo-heading {
   font-size: 40px;
   line-height: 1.5;
+  color: #0D4EA1;
 }
 @media screen and (max-width: 768px) {
   .eppo-section .eppo-heading {
@@ -510,8 +590,13 @@ textarea {
   margin: 0;
   line-height: 1.4;
 }
+.eppo-counter .eppo-number-label {
+  font-size: 3.6rem;
+  font-family: "Barlow Condensed", sans-serif;
+  color: #0D4EA1;
+}
 .eppo-counter .eppo-number {
-  font-size: 5rem;
+  font-size: 3.6rem;
   min-width: 1em;
   white-space: nowrap;
   text-align: left;
@@ -522,21 +607,24 @@ textarea {
   line-height: 1;
 }
 .eppo-counter .eppo-counter-icon img {
-  max-width: 120px;
+  max-width: 90px;
   height: fit-content;
-  margin-right: 1em;
 }
 .eppo-counter .eppo-label {
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
+  font-family: "Barlow Condensed", sans-serif;
+  color: #0D4EA1;
+  font-size: 1.2em;
 }
 .eppo-counter .eppo-percentage {
   text-transform: uppercase;
   font-family: "Barlow Condensed", sans-serif;
-  font-weight: 800;
-  font-size: 1.8em;
-  letter-spacing: 0.05em;
-  color: #8F4B9D;
+  font-size: 2em;
+  color: #009AFF;
+}
+
+.eppo-counter-box {
+  background-color: #E5F7FF;
+  height: 100%;
 }
 
 .eppo-stats-download img {

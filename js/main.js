@@ -95,25 +95,41 @@ $(document).ready(function($) {
 
               // Start the counter animation after the element animation completes
 							setTimeout(function() {
-								$('.n-counter').waypoint(function(direction) {
-									if (direction === 'down' && !$(this.element).hasClass('eppo-animated')) {
-										var comma_separator_number_step = $.animateNumber.numberStepFactories.separator(' ');
-										$(this.element).find('.eppo-number').each(function() {
-											var $this = $(this),
-											num = $this.data('number');
-											$this.animateNumber(
-											{
-												number: num,
-												numberStep: comma_separator_number_step
-											},
-						          	4000 // Duration of the counter animation in milliseconds
-						          );
-										});
-										$(this.element).addClass('eppo-animated');
-									}
-								}, { offset: '100%' });
+						    $('.n-counter').waypoint(function(direction) {
+					        if (direction === 'down' && !$(this.element).hasClass('eppo-animated')) {
+				            $(this.element).find('.eppo-number').each(function() {
+			                var $this = $(this),
+		                    num = $this.data('number'),
+		                    decimalPlaces = $this.data('decimal-places');
 
-            	}, 3000); // Adjust the delay (in milliseconds) as needed
+			                // Define the numberStep function
+			                var numberStep = function(now, tween) {
+		                    var formattedNumber = decimalPlaces !== undefined
+	                        ? now.toFixed(decimalPlaces) // Format with decimal places
+	                        : Math.floor(now); // No decimals
+
+		                    // Add space as a thousands separator
+		                    formattedNumber = formattedNumber.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+
+		                    $(tween.elem).text(formattedNumber);
+		                };
+
+			                // Animate the number with the custom numberStep function
+			                $this.animateNumber(
+		                    {
+	                        number: num,
+	                        numberStep: numberStep
+		                    },
+		                    4000 // Duration of the counter animation in milliseconds
+			                );
+				            });
+				            $(this.element).addClass('eppo-animated');
+					        }
+						    }, { offset: '100%' });
+						}, 3000);
+
+
+						 // Adjust the delay (in milliseconds) as needed
 
             }, k * 100); // Adjust the delay (in milliseconds) as needed
 					});
