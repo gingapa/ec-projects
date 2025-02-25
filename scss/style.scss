@@ -127,6 +127,18 @@ section {
 	}
 }
 
+#section-relations-eppo-with-partners {
+	.section-header {
+		background: url('../images/partners-header.png') no-repeat center center/cover fixed;
+	}
+}
+
+#section-administrative-services {
+	.section-header {
+		background: url('../images/support-header.png') no-repeat center center/cover fixed;
+	}
+}
+
 .text-primary {
 	color: $primary!important;
 }
