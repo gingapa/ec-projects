@@ -618,7 +618,7 @@ textarea {
   line-height: 1;
 }
 .eppo-counter .eppo-counter-icon img {
-  max-width: 90px;
+  max-height: 90px;
   height: fit-content;
 }
 .eppo-counter .eppo-label {
