@@ -133,7 +133,7 @@ section {
 	}
 }
 
-#section-administrative-services {
+#section-support-services {
 	.section-header {
 		background: url('../images/support-header.png') no-repeat center center/cover fixed;
 	}
@@ -189,6 +189,9 @@ section {
 		color: $white;
 		text-transform: uppercase;
 		font-size: 18px;
+		&:active {
+			color: $white;
+		}
 	}
 	
 	&.scrolled  {
