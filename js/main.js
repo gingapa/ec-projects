@@ -2,8 +2,37 @@ $(document).ready(function($) {
 
 	"use strict";
 
-	// loader
+// Function to check date/time and redirect if necessary
+  function checkAndRedirect() {
+      // Get current URL
+      var currentUrl = window.location.href;
 
+      // Check if the URL contains query parameters (e.g., ?private=yes)
+      if (currentUrl.includes("?private=yes")) {
+        return; // Do nothing if there are query parameters
+      }
+
+      // Get current date/time in Brussels timezone
+      var now = new Date().toLocaleString("en-US", { timeZone: "Europe/Brussels" });
+      var currentTime = new Date(now);
+
+      // Define start and end time in Brussels timezone
+      var startTime = new Date("2025-02-28T00:00:00+01:00"); // Feb 28, 12:00 AM Brussels time
+      var endTime = new Date("2025-03-03T05:30:00+01:00"); // Mar 3, 5:30 AM Brussels time
+
+      // Check if current time falls within the range
+      if (currentTime >= startTime && currentTime <= endTime) {
+        window.location.href = "https://www.eppo.europa.eu";
+      }
+  }
+
+    // Run the function to check and redirect
+    checkAndRedirect();
+
+  // Run the function to check and redirect
+  checkAndRedirect();
+
+	// loader
 	var carousel = function() {
 		$('.owl-carousel').owlCarousel({
 			loop: true,
