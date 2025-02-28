@@ -652,6 +652,15 @@ textarea {
   margin-bottom: 0 !important;
 }
 
+.magnifying-glass-icon {
+  top: 3%;
+  right: 8%;
+  font-size: 1.1rem;
+  border: 1px solid;
+  width: 2.2rem;
+  text-align: center;
+}
+
 #eppo-loader {
   position: fixed;
   width: 96px;

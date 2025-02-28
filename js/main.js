@@ -120,13 +120,13 @@ $(document).ready(function($) {
 	                        number: num,
 	                        numberStep: numberStep
 		                    },
-		                    4000 // Duration of the counter animation in milliseconds
+		                    3000 // Duration of the counter animation in milliseconds
 			                );
 				            });
 				            $(this.element).addClass('eppo-animated');
 					        }
 						    }, { offset: '100%' });
-						}, 3000);
+						}, 2000);
 
 
 						 // Adjust the delay (in milliseconds) as needed
